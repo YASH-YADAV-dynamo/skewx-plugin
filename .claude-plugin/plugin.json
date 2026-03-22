@@ -1,0 +1,6 @@
+{
+  "name": "skewx",
+  "description": "Orderbook imbalance for DEX bots. WebSocket URLs, subscribe formats, noise-reduced formulas. Cross-DEX spread data for comparison and arbitrage.",
+  "version": "1.0.0",
+  "author": { "name": "dynamo" }
+}
