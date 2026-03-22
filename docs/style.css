@@ -98,9 +98,15 @@ img, svg { display: block; }
   border-bottom: 1px solid var(--border);
 }
 .brand-mark {
-  color: var(--accent);
   flex-shrink: 0;
   line-height: 0;
+}
+.brand-logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 .brand-text {
   display: flex;
