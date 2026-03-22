@@ -43,3 +43,9 @@ Or after adding a custom marketplace:
 ## Live data
 
 For real-time orderbook signals, use the orderbook-imbalance web app.
+
+## License
+
+MIT — see [`LICENSE`](LICENSE) in the repository root.
+
+Privacy summary for the static docs site: [`docs/legal.html`](docs/legal.html).
