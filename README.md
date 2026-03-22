@@ -1,6 +1,8 @@
-# SkewX — Orderbook Imbalance for DEX Bots
+# SkewX
 
-Orderbook imbalance for DEX bots. WebSocket URLs, subscribe formats, noise-reduced formulas. Cross-DEX spread data for comparison and arbitrage.
+**Platform of skills** for **accurate, high-performance market data**—built for **trading platforms**, **research**, and **bots**. **Orderbook imbalance** is live (multi-DEX L2, formulas, denoising). Additional modules are described in the plugin metadata (`.claude-plugin/plugin.json`) / `skills/skewx/SKILL.md` when they ship.
+
+**Docs:** from repo root run `npx serve docs -p 3000` and open http://localhost:3000 — static site: `docs/index.html`, `style.css`, `script.js`. Canonical technical detail: `skills/skewx/SKILL.md` + `skills/skewx/reference.md`. See `docs/README.md` for the maintenance map.
 
 ## Quick commands
 

@@ -1,6 +1,6 @@
 {
   "name": "skewx",
-  "description": "Orderbook imbalance for DEX bots. WebSocket URLs, subscribe formats, noise-reduced formulas. Cross-DEX spread data for comparison and arbitrage.",
+  "description": "SkewX platform skill: accurate, high-performance market data for trading platforms, research, and bots. Orderbook imbalance live; more modules coming soon.",
   "version": "1.0.0",
   "author": { "name": "dynamo" }
 }

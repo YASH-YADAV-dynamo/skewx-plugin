@@ -1,11 +1,11 @@
 ---
 name: skewx
-description: Orderbook imbalance for DEX bots. WebSocket URLs and subscribe formats for Pacifica, 01, HotStuff, Paradex, Hibachi, Hyperliquid, Extended, Aster, Nado. Distance-weighted formula + 5-stage noise reduction. Cross-DEX spread comparison for arbitrage.
+description: SkewX platform skill—accurate, high-performance market data for trading platforms, research, and bots. Live: orderbook imbalance (multi-DEX WebSockets, distance-weighted formula, 5-stage noise reduction). More skills coming soon.
 ---
 
-# SkewX — Orderbook Imbalance for DEX Bots
+# SkewX (orderbook imbalance — live)
 
-Build DEX connectors, compute noise-reduced imbalance, and interpret cross-DEX spread for arbitrage and trading signals.
+Part of the **SkewX** platform: build DEX connectors, compute noise-reduced imbalance, and interpret cross-DEX spread for platforms, research, and bots. Additional modules (trades, funding, etc.) will follow the same standards.
 
 ## WebSocket Connection Details
 

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkewX — Claude plugin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar" role="navigation" aria-label="Documentation navigation">
+    <div class="sidebar-inner">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="14" width="10" height="12" rx="2" fill="currentColor" opacity="0.4"/>
+            <rect x="9" y="7" width="10" height="19" rx="2" fill="currentColor" opacity="0.7"/>
+            <rect x="16" y="2" width="10" height="24" rx="2" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">SkewX</span>
+          <span class="brand-tag">Plugin</span>
+        </div>
+      </div>
+
+      <div class="search-wrap">
+        <div class="search-box" id="searchBox">
+          <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" id="searchInput" placeholder="Search docs…" autocomplete="off" spellcheck="false" />
+          <kbd class="search-kbd">⌘K</kbd>
+        </div>
+        <div class="search-results" id="searchResults" hidden></div>
+      </div>
+
+      <nav class="nav">
+        <a href="#intro" class="nav-link active" data-section="intro">Introduction</a>
+        <a href="#quickstart" class="nav-link" data-section="quickstart">Quick start</a>
+        <a href="#install" class="nav-link" data-section="install">Install</a>
+        <span class="nav-spacer" aria-hidden="true"></span>
+        <a href="#provides" class="nav-link" data-section="provides">What it provides</a>
+        <a href="#venues" class="nav-link" data-section="venues">Venues</a>
+        <a href="#orderbook" class="nav-link" data-section="orderbook">Order book</a>
+        <span class="nav-spacer" aria-hidden="true"></span>
+        <a href="#websocket" class="nav-link" data-section="websocket">WebSocket reference</a>
+        <a href="#skill" class="nav-link" data-section="skill">Commands</a>
+        <span class="nav-spacer" aria-hidden="true"></span>
+        <a href="#usecases" class="nav-link" data-section="usecases">Use cases</a>
+        <a href="#about" class="nav-link" data-section="about">About these docs</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="https://github.com" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <header class="topbar" id="topbar">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <span class="topbar-title">SkewX Docs</span>
+    <div class="topbar-actions">
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="icon-sun">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </span>
+        <span class="icon-moon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <div class="content-wrap">
+
+      <section id="intro" class="doc-section">
+        <div class="breadcrumb"><span>Overview</span><span class="bc-sep">/</span><span>Introduction</span></div>
+        <h1 class="page-title">SkewX</h1>
+        <p class="page-lead">Claude plugin skill for accurate, high-performance market data: trading platforms, research, and bots. <strong>Live today:</strong> orderbook imbalance (multi-DEX WebSockets, distance-weighted formula, 5-stage noise reduction). The plugin description notes that more modules may follow the same standards.</p>
+        <p class="doc-note">This site only summarizes what ships in the repository—<code>.claude-plugin</code>, <code>skills/skewx/SKILL.md</code>, and <code>skills/skewx/reference.md</code>—plus the repo README.</p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="quickstart" class="doc-section">
+        <div class="breadcrumb"><span>Overview</span><span class="bc-sep">/</span><span>Quick start</span></div>
+        <h2 class="section-title">Quick start</h2>
+        <p>Use SkewX inside Claude as a plugin skill (see README).</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>Install the plugin</h4>
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-lang">bash</span>
+                  <button type="button" class="copy-btn" data-copy="/plugin install skewx@claude-plugins-official">Copy</button>
+                </div>
+                <pre><code>/plugin install skewx@claude-plugins-official</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>Invoke the skill</h4>
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-lang">chat</span>
+                  <button type="button" class="copy-btn" data-copy="@skewx">Copy</button>
+                </div>
+                <pre><code>@skewx</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>Ask for orderbook / DEX help</h4>
+              <p class="step-inline">Claude can use the skill when you ask about orderbook data, DEX connectors, imbalance formulas, or cross-DEX arbitrage (README).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="install" class="doc-section">
+        <div class="breadcrumb"><span>Overview</span><span class="bc-sep">/</span><span>Install</span></div>
+        <h2 class="section-title">Install</h2>
+        <p>Install paths from the README:</p>
+
+        <div class="tabs" id="installTabs">
+          <div class="tab-list" role="tablist">
+            <button type="button" class="tab-btn active" role="tab" data-tab="official">Official</button>
+            <button type="button" class="tab-btn" role="tab" data-tab="custom">Custom marketplace</button>
+            <button type="button" class="tab-btn" role="tab" data-tab="manual">From repo</button>
+          </div>
+          <div class="tab-panel active" data-panel="official">
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">bash</span><button type="button" class="copy-btn" data-copy="/plugin install skewx@claude-plugins-official">Copy</button></div>
+              <pre><code>/plugin install skewx@claude-plugins-official</code></pre>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="custom">
+            <div class="code-block">
+              <div class="code-header"><span class="code-lang">bash</span><button type="button" class="copy-btn" data-copy="/plugin install skewx@your-marketplace">Copy</button></div>
+              <pre><code>/plugin install skewx@your-marketplace</code></pre>
+            </div>
+            <p>Add your marketplace first, then run the command above with your marketplace id.</p>
+          </div>
+          <div class="tab-panel" data-panel="manual">
+            <p>Clone this repository and point your plugin path at the folder containing <code>.claude-plugin</code> and <code>skills/skewx</code>. See the repo README for layout.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="provides" class="doc-section">
+        <div class="breadcrumb"><span>Skill</span><span class="bc-sep">/</span><span>What it provides</span></div>
+        <h2 class="section-title">What it provides</h2>
+        <p>From the README (what the skill is for):</p>
+        <ul class="doc-list">
+          <li>WebSocket URLs for Pacifica, 01 Exchange, HotStuff, Paradex, Hibachi, Hyperliquid, Extended, Aster, Nado</li>
+          <li>Subscribe message formats per DEX</li>
+          <li>Symbol mapping (e.g. BTC/USD → per-DEX symbols)</li>
+          <li>Distance-weighted imbalance formula</li>
+          <li>5-stage noise reduction pipeline</li>
+          <li>Cross-DEX use cases for bots (spread comparison, arbitrage, liquidity mapping)</li>
+        </ul>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="venues" class="doc-section">
+        <div class="breadcrumb"><span>Skill</span><span class="bc-sep">/</span><span>Venues</span></div>
+        <h2 class="section-title">Venues</h2>
+        <p>From <code>SKILL.md</code>—DEXes covered for WebSocket connection details:</p>
+        <p class="doc-mono-block">Pacifica, 01 Exchange, HotStuff, Paradex, Hibachi, Hyperliquid, Extended, Aster, Nado.</p>
+        <p>URLs, subscribe payloads, symbol table, and level format are in <code>skills/skewx/reference.md</code>.</p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="orderbook" class="doc-section">
+        <div class="breadcrumb"><span>Skill</span><span class="bc-sep">/</span><span>Order book</span></div>
+        <h2 class="section-title">Order book &amp; imbalance</h2>
+        <p>The skill documents a <strong>distance-weighted imbalance</strong>: bid vs ask size near mid, with farther levels down-weighted via decay <code>λ</code> (typical value 10). Output range <strong>[-1, 1]</strong>—positive buy pressure, negative sell pressure (<code>SKILL.md</code>).</p>
+        <h3 class="subsection-title">Primary formula</h3>
+        <div class="code-block formula-block">
+          <pre><code>I = (Σ B_i·e^(-λ·d_i) - Σ A_i·e^(-λ·d_i)) / (Σ B_i·e^(-λ·d_i) + Σ A_i·e^(-λ·d_i))</code></pre>
+        </div>
+        <p>Where <code>d_i</code> = fractional distance from mid <code>|p_i - mid| / mid</code>, <code>mid = (best_bid + best_ask) / 2</code>, and <code>B_i</code>, <code>A_i</code> are bid/ask size at level <code>i</code>.</p>
+        <h3 class="subsection-title">5-stage noise reduction</h3>
+        <p>From <code>SKILL.md</code>—apply in order:</p>
+        <ol class="doc-list ordered">
+          <li><strong>Spike filter</strong> — If <code>|value - prev| &gt; 0.3</code>, replace with median of last 5 samples.</li>
+          <li><strong>EMA</strong> — Exponential moving average, 1s half-life.</li>
+          <li><strong>Kalman filter</strong> — Process noise 0.01, measurement noise 0.1.</li>
+          <li><strong>Robust mean</strong> — Median of last 15 Kalman outputs.</li>
+          <li><strong>Regime</strong> — From smoothed history std: stable (σ&lt;0.02), trending (σ&lt;0.08), volatile (σ≥0.08). Confidence: stable=1, trending=0.8, volatile=0.5.</li>
+        </ol>
+        <p>Full math write-ups (LaTeX-style) can live in the skill file or your own notes; the repo does not ship a separate formula markdown file.</p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="websocket" class="doc-section">
+        <div class="breadcrumb"><span>Reference</span><span class="bc-sep">/</span><span>WebSocket</span></div>
+        <h2 class="section-title">WebSocket reference</h2>
+        <p>Per-venue <code>wss://</code> URLs, subscribe messages (or URL-embedded symbols), snapshot vs delta notes, symbol mapping table, and level format are maintained in the repo only:</p>
+        <p><code class="path-inline">skills/skewx/reference.md</code></p>
+        <p>Example from that file: Hyperliquid <code>wss://api.hyperliquid.xyz/ws</code> with <code>l2Book</code> subscription—see the file for the exact JSON.</p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="skill" class="doc-section">
+        <div class="breadcrumb"><span>Reference</span><span class="bc-sep">/</span><span>Commands</span></div>
+        <h2 class="section-title">Commands</h2>
+        <p>The skill runs in your Claude environment. The README lists:</p>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">commands</span><button type="button" class="copy-btn" data-copy="@skewx&#10;/skewx:skewx">Copy</button></div>
+          <pre><code>@skewx
+/skewx:skewx</code></pre>
+        </div>
+        <p>Install (official marketplace): <code>/plugin install skewx@claude-plugins-official</code></p>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="usecases" class="doc-section">
+        <div class="breadcrumb"><span>Skill</span><span class="bc-sep">/</span><span>Use cases</span></div>
+        <h2 class="section-title">Use cases</h2>
+        <p>From <code>SKILL.md</code> (“Usefulness for Bots”):</p>
+        <ul class="doc-list">
+          <li><strong>Cross-DEX spread:</strong> Compare imbalance across venues. Divergent imbalances = arbitrage opportunity.</li>
+          <li><strong>Directional signal:</strong> Sustained positive imbalance → short-term bullish bias; negative → bearish.</li>
+          <li><strong>Liquidity mapping:</strong> Identify support/resistance zones, thin vs thick levels.</li>
+          <li><strong>Order flow context:</strong> Distinguish passive resting liquidity from aggressive directional intent.</li>
+        </ul>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <section id="about" class="doc-section">
+        <div class="breadcrumb"><span>Meta</span><span class="bc-sep">/</span><span>About</span></div>
+        <h2 class="section-title">About these docs</h2>
+        <p>Static HTML in <code>docs/</code> (<code>index.html</code>, <code>style.css</code>, <code>script.js</code>). Authoritative technical detail for WebSockets and symbols remains in <code>skills/skewx/reference.md</code>; narrative and formulas in <code>skills/skewx/SKILL.md</code>.</p>
+        <p><code>SKILL.md</code> also mentions a separate orderbook-imbalance web app for real-time comparison across DEXes; the skill itself documents methodology so you can implement connectors and calculations. See your README for how you link that project.</p>
+        <p>Plugin metadata: <code>.claude-plugin/plugin.json</code> (name <code>skewx</code>, version, author). Maintainer map for files: <code>docs/README.md</code>.</p>
+      </section>
+
+      <div class="on-this-page" id="onThisPage">
+        <div class="otp-title">On this page</div>
+        <nav class="otp-nav" id="otpNav"></nav>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
