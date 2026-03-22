@@ -4,7 +4,7 @@
 
 | What | Files | Notes |
 |------|--------|--------|
-| **Published docs UI** | `index.html`, `style.css`, `script.js` | Single-page site. Preview: `npx serve docs -p 3000` |
+| **Published docs UI** | `index.html`, `style.css`, `script.js` | Single-page site. Preview: `npx serve docs -p 3000`. Assets: `logo.png` (preferred) or `logo.jpg` (fallback), `favicon.ico`. |
 | **Claude skill (source of truth)** | `skills/skewx/SKILL.md`, `skills/skewx/reference.md` | Relative to repo root. Skill must keep YAML frontmatter on `SKILL.md`. |
 | **Repo landing** | `README.md` (root) | Install, commands, overview |
 

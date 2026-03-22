@@ -20,7 +20,7 @@ Add this marketplace (if distributing via custom marketplace), or install from t
 /plugin install skewx@claude-plugins-official
 ```
 
-Or after adding a custom marketplace from GitHub:
+Or after adding a custom marketplace:
 
 ```bash
 /plugin install skewx@your-marketplace
@@ -42,4 +42,4 @@ Or after adding a custom marketplace from GitHub:
 
 ## Live data
 
-For real-time orderbook signals, use the [orderbook-imbalance web app](https://github.com/your-username/orderbook-imbalance-indicator).
+For real-time orderbook signals, use the orderbook-imbalance web app.
